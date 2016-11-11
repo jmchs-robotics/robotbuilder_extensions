@@ -7,3 +7,20 @@ Custom components all go in $USER_HOME/Robotbuilder/extensions. On Linux and Mac
 Here is a link that describes how to create these sorts of extensions.
 https://wpilib.screenstepslive.com/s/4485/m/26402/l/470258-adding-custom-components
 
+## Status of extensions
+
+### LidarDistance
+
+Haven't even started working on the guts of this command.
+
+### RobotDrive6
+
+This is mostly done, however there is no constructor for RobotDrive in the wpilib that takes 6 motors. I will be pushing that change up to the wpilib developers.
+
+### SocketVision
+
+Haven't even started working on the guts of this command.
+
+### TimedCommand
+
+Due to some limitations in the Robot Builder Java code, declarations are not supported so I cannot add anything substantial to the creation of these commands. They are still userful in that they are just as capable as any other command. I will try to sned some change to collabnet to see if we can get the developers of Robot Builder add the delcaration tags for the export yaml file.
