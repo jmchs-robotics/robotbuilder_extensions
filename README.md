@@ -23,4 +23,4 @@ Haven't even started working on the guts of this command.
 
 ### TimedCommand
 
-Due to some limitations in the Robot Builder Java code, declarations are not supported so I cannot add anything substantial to the creation of these commands. They are still userful in that they are just as capable as any other command. I will try to sned some change to collabnet to see if we can get the developers of Robot Builder add the delcaration tags for the export yaml file.
+Due to some limitations in the Robot Builder Java code, declarations are not supported so I cannot add anything substantial to the creation of these commands. They are still useful in that they are just as capable as any other command. I will try to sned some change to collabnet to see if we can get the developers of Robot Builder add the declaration tags for the export yaml file.
