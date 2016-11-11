@@ -1,4 +1,4 @@
-ReaseSense:
+RobotDrive6:
   Defaults: "CustomComponent,None"
-  ClassName: "RobotDrive6"
-  Construction: "#variable($Name) = new ${ClassName};"
+  ClassName: "RobotDrive"
+  Construction: "#variable($Name) = new ${ClassName}(#variable($Left_Front_Motor), #variable($Left_Rear_Motor), #variable($Right_Front_Motor), #variable($Right_Rear_Motor));"

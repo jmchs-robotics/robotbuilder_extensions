@@ -1,0 +1,3 @@
+!DistinctValidator
+  name: RobotDrive6Validator
+  fields: ["Left Front Motor", "Left Center Motor", "Left Rear Motor", "Right Front Motor", "Right Center Motor", "Right Rear Motor"]

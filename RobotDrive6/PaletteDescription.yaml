@@ -1,7 +1,7 @@
 !Component
   name: RobotDrive6
   type: Controller
-  supports: {PIDSource: 6}
+  supports: {PIDOutput: 6}
   help: A drive train with 6 motors.
   properties:
     - !ChildSelectionProperty
