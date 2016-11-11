@@ -1,0 +1,5 @@
+!Component
+  name: SocketVision
+  type: Sensors
+  supports: {PIDSource: 1}
+  help: A vision co-processor system that provides image recognition information through a socket.

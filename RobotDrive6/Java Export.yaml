@@ -1,0 +1,4 @@
+ReaseSense:
+  Defaults: "CustomComponent,None"
+  ClassName: "RobotDrive6"
+  Construction: "#variable($Name) = new ${ClassName};"

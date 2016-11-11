@@ -1,0 +1,4 @@
+ReaseSense:
+  Defaults: "CustomComponent,None"
+  ClassName: "LidarDistance"
+  Construction: "#variable($Name) = new ${ClassName};"

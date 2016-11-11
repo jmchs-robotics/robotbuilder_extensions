@@ -1,0 +1,4 @@
+ReaseSense:
+  Defaults: "CustomComponent,None"
+  ClassName: "SocketVision"
+  Construction: "#variable($Name) = new ${ClassName};"

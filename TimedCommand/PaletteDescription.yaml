@@ -1,0 +1,18 @@
+!Component
+  name: TimedCommand
+  type: Command
+  help: An action that will be performed for a fixed duration of time specified in milliseconds.
+  properties:
+    - !TypeSelectionProperty
+      name: Requires
+      type: Subsystem
+      default: None
+    - !BooleanProperty
+      name: Button on SmartDashboard
+      default: true
+    - !DoubleProperty
+      name: Duration
+      default: 100
+    - !Parameters
+      name: Parameters
+      default: []

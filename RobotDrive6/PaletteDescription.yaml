@@ -1,0 +1,60 @@
+!Component
+  name: RobotDrive6
+  type: Controller
+  supports: {PIDSource: 6}
+  help: A drive train with 6 motors.
+  properties:
+    - !ChildSelectionProperty
+      name: Left Front Motor
+      type: PIDOutput
+      validators: [RobotDrive6Validator, ChildDropdownSelected]
+    - !BooleanProperty
+      name: Left Front Motor Inverted
+      default: false
+    - !ChildSelectionProperty
+      name: Left Center Motor
+      type: PIDOutput
+      validators: [RobotDrive6Validator, ChildDropdownSelected]
+    - !BooleanProperty
+      name: Left Center Motor Inverted
+      default: false
+    - !ChildSelectionProperty
+      name: Left Rear Motor
+      type: PIDOutput
+      validators: [RobotDrive6Validator, ChildDropdownSelected]
+    - !BooleanProperty
+      name: Left Rear Motor Inverted
+      default: false
+    - !ChildSelectionProperty
+      name: Right Front Motor
+      type: PIDOutput
+      validators: [RobotDrive6Validator, ChildDropdownSelected]
+    - !BooleanProperty
+      name: Right Front Motor Inverted
+      default: false
+    - !ChildSelectionProperty
+      name: Right Center Motor
+      type: PIDOutput
+      validators: [RobotDrive6Validator, ChildDropdownSelected]
+    - !BooleanProperty
+      name: Right Center Motor Inverted
+      default: false
+    - !ChildSelectionProperty
+      name: Right Rear Motor
+      type: PIDOutput
+      validators: [RobotDrive6Validator, ChildDropdownSelected]
+    - !BooleanProperty
+      name: Right Rear Motor Inverted
+      default: false
+    - !DoubleProperty
+      name: Sensitivity
+      default: 0.5
+    - !DoubleProperty
+      name: Maximum Output
+      default: 1
+    - !BooleanProperty
+      name: Safety Enabled
+      default: true
+    - !DoubleProperty
+      name: Safety Expiration Time
+      default: 0.1
