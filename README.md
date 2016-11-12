@@ -9,18 +9,22 @@ https://wpilib.screenstepslive.com/s/4485/m/26402/l/470258-adding-custom-compone
 
 ## Status of the extensions
 
-### LidarDistance
-
-Haven't even started working on the guts of this command.
-
 ### RobotDrive6
 
 This is mostly done, however there is no constructor for RobotDrive in the wpilib that takes 6 motors. I will be pushing that change up to the wpilib developers.
 
-### SocketVision
-
-Haven't even started working on the guts of this command.
-
 ### TimedCommand
 
 Due to some limitations in the Robot Builder Java code, declarations are not supported so I cannot add anything substantial to the creation of these commands. They are still useful in that they are just as capable as any other command. I will send some changes to collabnet to see if we can get the developers of Robot Builder to add the declaration tags for the export yaml file.
+
+### BatteryVoltage
+
+Haven't even started working on the guts of this sensor.
+
+### LidarDistance
+
+Haven't even started working on the guts of this sensor.
+
+### SocketVision
+
+Haven't even started working on the guts of this sensor.
