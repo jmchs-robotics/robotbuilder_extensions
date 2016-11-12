@@ -1,2 +1,43 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+  </head>
+
+  <body>
+      <h1>Socket Vision over UDP</h1>
+
+    <h2>What is it?</h2>
+      <p>
+        This module acts as a sensor that provides a PID source that can be used
+        within a PID Loop. This is useful for driving the robot to a target, aiming
+        a shooting device, or determing position on the field of play.
+      </p>
+      <p>
+        The Socket Vision sensor assumes that
+        you are using a co-processor (ex: rasberry pi) that has
+        a camera attached and is using vision processing
+        algorithms (OpenCV) that will ascertain target information
+        and then transmits that location / target data over a UDP socket.
+      </p>
+      <p>
+        In terms of connectivitiy, the Socket Vision sensor acts as a client
+        to the co-processor who acts as a server for UDP packets.
+      </p>
+      <p>
+        Once the data is received from the co-processor, the targetting information can be extracted
+        (ie: parsed) and manipulated to act as PID Source in a PID Loop or PID Command.
+    </p>
+
+    <h2>Properties</h2>
+
+    <dl> 
+      <dt>Server IP</dt>
+      <dd>The IP of the co-processor that this sensor module will connect too.</dd>
+      <dt>Server Port</dt>
+      <dd>The port of the co-processor that this sensor module will connect too.</dd>
+    </dl>
+
+  </body>
+
 </html>
+

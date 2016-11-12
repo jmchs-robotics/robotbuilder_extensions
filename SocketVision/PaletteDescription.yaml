@@ -1,5 +1,15 @@
 !Component
   name: SocketVision
-  type: Sensors
+  type: Sensor
   supports: {PIDSource: 1}
   help: A vision co-processor system that provides image recognition information through a UDP socket.
+  properties:
+    - !StringProperty
+      name: Server IP
+      default: 192.168.1.1
+      validators: [ExistsValidator]
+    - !DoubleProperty
+      name: Server Port
+      default: 0
+      validators: [ExistsValidator]
+
