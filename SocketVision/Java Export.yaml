@@ -1,4 +1,5 @@
-ReaseSense:
+SocketVision:
   Defaults: "CustomComponent,None"
   ClassName: "SocketVision"
   Construction: "#variable($Name) = new ${ClassName}(#variable($Server_IP), #variable($Server_Port));"
+
