@@ -1,5 +1,4 @@
 !Component
   name: BatteryVoltage
-  type: Sensors
-  supports: {PIDSource: 1}
-  help: Measures the battery voltage, and provides that as sensor data to be used in a PID control loop.
+  type: PIDSource
+  help: Measures the battery voltage, and provides feedback as sensor data to be used in a PID control loop.

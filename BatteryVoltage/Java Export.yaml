@@ -2,3 +2,4 @@ BatteryVoltage:
   Defaults: "CustomComponent,None"
   ClassName: "BatteryVoltage"
   Construction: "#variable($Name) = new ${ClassName}();"
+  Declaration: "public static BatteryVoltage #variable($Name);"

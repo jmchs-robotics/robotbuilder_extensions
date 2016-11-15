@@ -19,12 +19,12 @@ Due to some limitations in the Robot Builder Java code, declarations are not sup
 
 ### BatteryVoltage
 
-Haven't even started working on the guts of this sensor.
+Finished. Please read documentation in RobotBuilder for more info.
 
 ### LidarDistance
 
-Haven't even started working on the guts of this sensor.
+Finished. Please read documentation in RobotBuilder for more info.
 
 ### SocketVision
 
-This extension if now working.
+Finished. Please read documentation in RobotBuilder for more info.

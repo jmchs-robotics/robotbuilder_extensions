@@ -1,5 +1,4 @@
 !Component
   name: LidarDistance
-  type: Sensors
-  supports: {PIDSource: 1}
-  help: A Lidar sensor connected to the I2C bus used to measure diistance.
+  type: PIDSource
+  help: A Lidar sensor connected to the I2C bus used to measure distance.
