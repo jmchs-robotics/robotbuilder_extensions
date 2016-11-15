@@ -1,5 +1,6 @@
 SocketVision:
   Defaults: "CustomComponent,None"
   ClassName: "SocketVision"
-  Construction: "#variable($Name) = new ${ClassName}(#variable($Server_IP), #variable($Server_Port));"
-
+  Construction: "#variable($Name) = new ${ClassName}(\"#variable($Server_IP)\", #variable($Server_Port));"
+  Declaration: "public static SocketVision #variable($Name);"
+  Extra: "if (!#variable($Name).connect()) {\n\t\t\tSystem.err.println(\"Failed to connect to the Socket Vision Server !!!\"); \n\t\t} else {\n\t\t\tSystem.out.println(\"Successfully connected to the Socket Vision Server.\");\n\t\t}"

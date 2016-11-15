@@ -27,4 +27,4 @@ Haven't even started working on the guts of this sensor.
 
 ### SocketVision
 
-Haven't even started working on the guts of this sensor.
+This extension if now working.

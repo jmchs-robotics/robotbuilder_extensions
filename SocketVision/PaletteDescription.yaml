@@ -1,7 +1,6 @@
 !Component
   name: SocketVision
-  type: Sensor
-  supports: {PIDSource: 1}
+  type: PIDSource
   help: A vision co-processor system that provides image recognition information through a UDP socket.
   properties:
     - !StringProperty
