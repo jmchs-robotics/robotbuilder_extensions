@@ -1,0 +1,122 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+  </head>
+
+  <body>
+      <h1>Lidar Lite using PWM</h1>
+
+    <h2>What is it?</h2>
+      <p>
+        This module acts as a sensor and provides a PID source that can be used
+        within a PID Loop. This is useful for driving the robot to a target, aiming
+        a turret, or determing position on the field of play.
+      </p>
+    <h2>What you have to do</h2>
+    <p>
+      In order to use this sensor, you will need to create a new class
+      named LidarLightPWM. This class will use the same Java package
+      used in Robot.java.  There is a sample implementation listed below.
+    </p>
+    </br>
+    <h2>How to hook it up</h2>
+    <p>
+      TODO: provide link to pdf.
+      TODO: describe which wires of to digital input and output.
+    </p>
+    </br>
+    </br>
+    <h2>Sample implementation of LidarLitePWM.java</h2>
+    <pre>
+package org.usfirst.frc5933.GodBot; // TODO: Change this package for your robot.
+
+import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DigitalOutput;
+
+public class LidarLitePWM implements Runnable {
+  
+  public static final int kPeriodScalar = 10000;
+  private DigitalInput input_;
+  private DigitalOutput output_;    
+  private Counter counter_;
+  private boolean running_;
+  private boolean debug_;
+  private double pulseWidth_;
+  private int delay_;
+
+  public LidarLitePWM(int digitalInput, int digitalOutput, int samples, int delay, boolean debug) {
+    input_ = new DigitalInput(digitalInput);
+    counter_ = new Counter(input_); 
+    counter_.setSemiPeriodMode(true);
+    counter_.setSamplesToAverage(samples);
+    output_ = new DigitalOutput(digitalOutput);
+    debug_ = debug;
+    delay_ = delay;
+    running_ = false;
+    reset();
+  }
+
+  private void reset() {
+    counter_.reset();
+    output_.set(true);
+  }
+
+  private void trigger() {
+    reset();
+    output_.set(false);
+    if (debug_)
+      System.out.println("LidarLightPWM::trigger");
+  }
+
+  private void measure() {
+    pulseWidth_ = counter_.getPeriod() * kPeriodScalar;
+    if (debug_)
+      System.out.println("LidarLightPWM::measure " + pulseWidth_);
+
+    output_.set(true);
+  }
+
+  private synchronized boolean isRunning() {
+     return running_;
+  }
+
+  public synchronized void setRunning(boolean running) {
+    running_ = running;
+  }
+
+  private static double pulseWidthToInches(double pw) {
+    // TODO:
+    return 0;
+  }
+
+  public synchronized double getDistance() {
+    return LidarLitePWM.pulseWidthToInches(pulseWidth_);
+  }
+
+  private void snooze() {
+    try {
+       Thread.sleep(delay_);
+     } catch (InterruptedException e) {
+     }
+  }
+                         
+  public double pidGet() {
+    // TODO: Is this correct or Should it be a value of -1 to 1 ?
+    return getDistance();
+  }
+
+  public void run() {
+    while (isRunning())
+    {
+       trigger();
+       snooze();
+       measure();
+    }
+  }
+}
+    </pre>
+  </body>
+
+</html>
+

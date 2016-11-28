@@ -1,7 +1,0 @@
-LidarDistance:
-  Defaults: "CustomComponent,None"
-  ClassName: "LidarDistance"
-  Construction: "#variable($Name) = new ${ClassName}(#variable($I2C_Port), #variable($I2C_Address));"
-  Import: "import ${package}.${ClassName};"
-  Declaration: "public static LidarDistance #variable($Name);"
-  Extra: "if (!#variable($Name).connect()) {\n\t\tSystem.err.println(\"Failed to connect to the LIDAR I2C device !!!\"); \n\t} else {\n\t\tSystem.out.println(\"Successfully connected to the LIDAR I2C device.\");\n\t}"

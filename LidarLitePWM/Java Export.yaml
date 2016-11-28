@@ -1,0 +1,7 @@
+LidarLitePWM:
+  Defaults: "CustomComponent,None"
+  ClassName: "LidarLitePWM"
+  Import: "import ${package}.${ClassName};"
+  Declaration: "public static LidarLitePWM #variable($Name);\n\tprivate static Thread lidarThread;"
+  Construction: "#variable($Name) = new ${ClassName}(#variable($Digital_Input), #variable($Digital_Output), #variable($Samples_To_Average), #variable($Sample_Delay), #variable($Show_Debug));"
+  Extra: "lidarThread = new Thread(#variable($Name));\n\t\tlidarThread.start();"

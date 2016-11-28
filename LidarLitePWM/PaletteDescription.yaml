@@ -1,0 +1,26 @@
+!Component
+  name: LidarLitePWM
+  type: PIDSource
+  help: A Lidar sensor connected to RoboRIO via 2 digitalIO lines.
+  properties:
+    - !ChoicesProperty
+      name: Digital Input
+      choices: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+      validators: [ExistsValidator]
+    - !ChoicesProperty
+      name: Digital Output
+      choices: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+      validators: [ExistsValidator]
+    - !StringProperty
+      name: Sample Delay
+      default: 100
+      validators: [ExistsValidator]
+    - !StringProperty
+      name: Samples To Average
+      default: 10
+      validators: [ExistsValidator]
+    - !StringProperty
+      name: Show Debug
+      default: false
+      validators: [ExistsValidator]
+
