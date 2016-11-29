@@ -51,7 +51,7 @@ public class LidarLitePWM implements Runnable {
       {0, 0},
       {4.3, 12},
       {6.8, 24},
-      {10.4, 24}
+      {10.4, 36}
   };
 
   public LidarLitePWM(int digitalInput, int digitalOutput, int samples, int delay, boolean debug) {
@@ -107,7 +107,7 @@ public class LidarLitePWM implements Runnable {
 
     double tableDiff = (kPulseWidthTable[index+1][0] - kPulseWidthTable[index][0]);
     double pulseWidthDiff =  pw - kPulseWidthTable[index][0];
-    double pulseWidthRatio =  pulseWidthDiff - tableDiff;
+    double pulseWidthRatio =  pulseWidthDiff / tableDiff;
     return (kPulseWidthTable[index][1] * pulseWidthRatio) + kPulseWidthTable[index][1];
   }
 
