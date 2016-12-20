@@ -41,7 +41,7 @@ public class LidarLitePWM implements Runnable {
   Counter counter_;
   boolean running_;
   boolean debug_;
-  double pulseWidth_;
+  double distance_;
   int delay_;
 
   // TODO: Fill out this table with values that you measure.
@@ -73,6 +73,7 @@ public class LidarLitePWM implements Runnable {
   private void reset() {
     counter_.reset();
     output_.set(true);
+    distance_ = 0;
   }
 
   private void trigger() {
@@ -83,11 +84,13 @@ public class LidarLitePWM implements Runnable {
   }
 
   private void measure() {
-    pulseWidth_ = counter_.getPeriod() * kPeriodScalar;
-    if (debug_)
-      System.out.println("LidarLightPWM::measure " + pulseWidth_);
-
+    double pulseWidth = counter_.getPeriod() * kPeriodScalar;
     output_.set(true);
+
+    if (debug_)
+      System.out.println("LidarLightPWM::measure " + pulseWidth);
+
+    distance_ = LidarLitePWM.pulseWidthToInches(pulseWidth);
   }
 
   private synchronized boolean isRunning() {
@@ -124,7 +127,7 @@ public class LidarLitePWM implements Runnable {
   }
 
   public synchronized double getDistance() {
-    return LidarLitePWM.pulseWidthToInches(pulseWidth_);
+    return distance_;
   }
 
   private void snooze() {
