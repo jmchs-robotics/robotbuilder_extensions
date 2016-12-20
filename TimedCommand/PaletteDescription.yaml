@@ -10,9 +10,6 @@
     - !BooleanProperty
       name: Button on SmartDashboard
       default: true
-    - !DoubleProperty
-      name: Duration
-      default: 100
     - !Parameters
       name: Parameters
       default: []

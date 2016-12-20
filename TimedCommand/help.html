@@ -7,16 +7,33 @@
     <h1>TimedCommand</h1>
 
     <h2>What is it?</h2>
-      <p>An action that will be performed for a fixed duration of time.</p>
+      <p>An action that will be performed for a fixed duration of time. This command acts just like any other command in that you can use it in a command group etc....</p>
 
    <dl>
       <dt>Requires</dt>
       <dd>The subsystem that this command requires.</dd>
       <dt>Button on SmartDashboard</dt>
       <dd>Whether or not to automatically place a button on the SmartDashboard.</dd>
-      <dt>Duration</dt>
-      <dd>The time for the command to run in milliseconds.
     </dl>
+    <h2>What you have to do</h2>
+    <p>
+    Add a line of code to the initialize method so that it looks like this.
+    <pre>
+    protected void initialize() {
+       setTimeout(8);
+    }
+    </pre>
+    Make sure to replace the 8 with a value of your choice in seconds.
+    <br>
+    <br>
+    <br>
+    Next, add another line of code to your isFinished method to it looks like this.
+    <pre>
+    protected boolean isFinished() {
+       return isTimedOut();
+    }
+    </pre>
+    </p>
 
   </body>
 
