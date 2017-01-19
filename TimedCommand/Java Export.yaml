@@ -1,5 +1,0 @@
-
-TimedCommand:
-  Defaults: "Command,None"
-  ClassName: "TimedCommand"
-  Construction: "#variable($Name) = new ${ClassName}();"
